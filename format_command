@@ -1,0 +1,9 @@
+
+
+# 新たにパッケージを作る
+
+$ cd ~/catkin_ws/src/
+$ catkin_create_pkg ros_format rospy roscpp std_msgs rospy_tutorials
+$ cd ~/catkin_ws/
+$ source ~/catkin_ws/devel/setup.bash
+

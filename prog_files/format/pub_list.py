@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+import rospy
+from rospy_tutorials.msg import Floats
+
+class Pub_List:
+
+    def __init__(self):  
+        rospy.init_node('List')
+        self.pub1 = rospy.Publisher('topic3', Floats ,queue_size=10)
+	self.pub_data = Floats()
+
+    def publish(self):
+        while not rospy.is_shutdown():
+            rate = rospy.Rate(5)
+            self.pub_data = [12.34, 43.21]
+            self.pub1.publish(self.pub_data)    
+            rate.sleep()
+
+
+if __name__ == "__main__":
+
+    pl = Pub_List()
+    pl.publish()
